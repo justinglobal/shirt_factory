@@ -10,12 +10,12 @@ shirt_factory
 
 ### High-Level Product
 
-#What is your web app going to do?
+####What is your web app going to do?
 
 Users design tshirt using an image they provide or inputing parameters for a template, with options for transforming the image. Output is an shirt design they can order printed and/or upload to image gallery.
 
 
-#How does a user interact with it on a high level?
+####How does a user interact with it on a high level?
 
 Users input parameters and/or image via the web app and the system will return a processed image representing the shirt design for the web page to display. The input parameters and image are a tshirt design and the processed image output is the processed shirt design image.
 
@@ -28,7 +28,7 @@ Users have the option to upload their final design to an image gallery and speci
 
 **Shirt Factory pages and interface**
 
-## Home page
+### Home page
   * Shirt design section displays blank white shirt initially
 
   * Design section options displayed via menu
@@ -44,7 +44,7 @@ Users have the option to upload their final design to an image gallery and speci
 
     3. Finished design is uploaded to gallery with title and/or purchased and saved in database
 
-## Order form page
+### Order form page
   * Displays final shirt image with form for user to specify order options
 
   * Order options
@@ -56,13 +56,13 @@ Users have the option to upload their final design to an image gallery and speci
   * Payment
     * Uses link to Paypal's payment system CMS which opens in new window and handles financial transaction processing outside of this system.
 
-## Design gallery page
+### Design gallery page
   * Displays shirt design and title in 'gallery' saved in database
 
   * Option to purchase design
     - takes user to order form page
 
-## Possible additional Features
+### Possible additional Features
   1. Users create designer profile. Designer profile has gallery of user's designs like main gallery
   2. Allow users to add and format text only on shirt or with an uploaded image. Arrange both text and image elements in designer section.
 
@@ -114,7 +114,7 @@ Week 4: 5/23 - 5/27  | *Stage 4 & 5*
 Week 5: 5/30 - 6/3   | *Stage 5, 6, & 7*
 Week 6: 6/6  - 6/9   | *review and refine*
 
-##Stages
+####Stages
 
 1. Make test page and initialize django database
   **Week 1**
