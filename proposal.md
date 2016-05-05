@@ -23,28 +23,44 @@ Users 'checkout' via an order form page, with a simple web form. Users select si
 
 Users have the option to upload their final design to an image gallery and specify a title for the design.
 
+MVP for final project has features scaled-down.
+
+Project MVP features
+
+1. Main page with ASCII art generator
+2. Page for each finished design with links to purchase
+3. Gallery of submitted designs
+
+Full site features:
+
+1. Interactive custom tshirt designer
+  * Users upload text, image, pic from clip art
+2. Shirt generators
+  * Templates for shirt designs with parameters user can set
+  * Generators:
+    * ASCII art - user uploads image, images is converted to ASCII art and rendered on the shirt
+    * Oregon Trail - user inputs text, text is rendered along with vintage video game art
+    * Glitch - users input image, image is altered via 'glitch' process that changes the appearance of the image
+3. Marketplace
+  * Users can upload designs they create to Marketplace
+  * Any user can purchase shirt from marketplace, shirt creator gets percentage of sale
 
 ### Specific Functionality
 
 **Shirt Factory pages and interface**
 
-### Home page
+#### Home page
   * Shirt design section displays blank white shirt initially
 
   * Design section options displayed via menu
-    1. Upload text and color parameters for image template ("oregon trail")
-      * Update display template with user parameters applied
-
-    2. Upload image from file or URL and shirt color parameters
-      * Resize and arrange image on blank shirt in section  
+    1. Upload image from file or URL and set design size and shirt color parameters
       * Transform image using ASCII generator
-      * Transform image using glitch generator
-          ? - Use js sliders to alter parameters and display changes in real time
+      * Resize and arrange transformed image on blank shirt in section  
       * Display original image thumbnail
 
-    3. Finished design is uploaded to gallery with title and/or purchased and saved in database
+    2. Finished design is uploaded to gallery with title and/or purchased and saved in database
 
-### Order form page
+#### Shirt page (order form page)
   * Displays final shirt image with form for user to specify order options
 
   * Order options
@@ -56,7 +72,7 @@ Users have the option to upload their final design to an image gallery and speci
   * Payment
     * Uses link to Paypal's payment system CMS which opens in new window and handles financial transaction processing outside of this system.
 
-### Design gallery page
+#### Design gallery page
   * Displays shirt design and title in 'gallery' saved in database
 
   * Option to purchase design
@@ -65,20 +81,20 @@ Users have the option to upload their final design to an image gallery and speci
 ### Possible additional Features
   1. Users create designer profile. Designer profile has gallery of user's designs like main gallery
   2. Allow users to add and format text only on shirt or with an uploaded image. Arrange both text and image elements in designer section.
+  3. Full custom shirt design interface. This is mostly Javascript and it is a long-term goal of the project. I hope to investigate how I would accomplish this as part of my project, but it is not a listed goal for my final project.
 
 ### Technical Components
 
 Web Page html/css/js
   - Shirt designer section in Home page
-    * Menu to select user action ('oregon trail' template, upload image, select processing type)
+    * Menu to select user action (upload image, select color for shirt and design)
     * Menu to select shirt color from palette - ? uses JS?
     * Option to rotate to 'front' or 'back' of shirt to place image
     * Apply changes
-      - ? Allow user to use JS slider to alter parameters and display changes real-time
 
-  - ? Where/how to do image resize/position in page section once it is uploaded and displayed
+  - User can position and resize uploaded image on blank shirt
     * This involves JS
-    * User can position and resize uploaded image on blank shirt
+    * User can position and resize transformed image on blank shirt
 
   - Order/gallery upload form page
     * Users are displayed a final shirt design
@@ -91,19 +107,23 @@ Web Page html/css/js
 Database
   - Stores page templates
   - Stores shirt design database
-    * shirt title, color of shirt, template parameters, original image, processed image
+    * shirt title, color of shirt, processed image size in pixels, original image, processed image
     * ? username
+    * template parameters
+      1. Python modules that will actually do the data transformation from the input parameters.
 
 Python modules
-  - oregon trail - takes base image and adds user-entered text to base image
-  - glitch - alters image by changing image file data directly to output altered version
-    * uses existing modules: pillow, PIL, numpy, and github glitch module
   - ASCII art - converts image to grayscale then applies grid and substitutes alpha/numberic characters for image color in each grid returning a "ascii art" version of image
     * uses existing modules: pillow, PIL, numpy and module from 'Python playground'
   - Django module
     * Query database for pages to display
     * Make Classes for shirt design database columns and build SQL for queries
     * Interact with glitch, ASCII, and other direct image manipulation modules
+
+    Modules for extended Functionality
+    - oregon trail - takes base image and adds user-entered text to base image
+    - glitch - alters image by changing image file data directly to output altered version
+      * uses existing modules: pillow, PIL, numpy, and github glitch module
 
 ### Timeline
 
@@ -127,29 +147,28 @@ Week 6: 6/6  - 6/9   | *review and refine*
   **Week 1 & 2**
 
 3. Make shirt database and connect to functioning test module and page.
+  * Begin testing first shirt design generator
   **Week 2 & 3**
 
 4. Create and style site pages
-  * home - most work intensive b/c of interactivity in shirt designer section
-  * order form
-  * gallery
+  * home - start with *one* shirt design generator, ASCII art module
+  * order form page
+  * gallery page
   **Week 3 & 4**
 
-5. ? Add other design function modules
-  - This depends on what I do first
-  * Oregon Trail, ASCII, and glitch modules
+5. Connect and test gallery and order page
   **Week 4 & 5**
 
-6. Connect and test gallery
-  **Week 5**
-
-7. Set up order processing
+6. Refine design and Set up order processing
   - Mostly outside of project scope...this is something that gives user an end point
   - Clicking on shirt in gallery takes user to order form for shirt
   **Week 5**
 
-Fail point: Javascript interaction for shirt designer sections
-  - This goal may fail because I don't know exactly what to use and much work it takes
+7. Add other design generators
+    * Oregon Trail and glitch modules
+    * Investigate full shirt designer interface
+  **Week 5**
+
+Extended Goal: Javascript interaction for shirt designer sections
+  - I don't know exactly what to use and much work it takes
     * Resize and reposition image, alter generator effects via slide
-  Mitigation:
-    - If the interactive shirt design elements cannot be finished on time, I will make a static image from the python modules. The user will have to transform/resize their image using other means before they upload, and they will not be able to change the position of the output design on the shirt.
