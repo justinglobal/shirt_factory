@@ -31,20 +31,6 @@ Project MVP features
 2. Page for each finished design with links to purchase
 3. Gallery of submitted designs
 
-Full site features:
-
-1. Interactive custom tshirt designer
-  * Users upload text, image, pic from clip art
-2. Shirt generators
-  * Templates for shirt designs with parameters user can set
-  * Generators:
-    * ASCII art - user uploads image, images is converted to ASCII art and rendered on the shirt
-    * Oregon Trail - user inputs text, text is rendered along with vintage video game art
-    * Glitch - users input image, image is altered via 'glitch' process that changes the appearance of the image
-3. Marketplace
-  * Users can upload designs they create to Marketplace
-  * Any user can purchase shirt from marketplace, shirt creator gets percentage of sale
-
 ### Specific Functionality
 
 **Shirt Factory pages and interface**
@@ -83,6 +69,16 @@ Full site features:
   2. Allow users to add and format text only on shirt or with an uploaded image. Arrange both text and image elements in designer section.
   3. Full custom shirt design interface. This is mostly Javascript and it is a long-term goal of the project. I hope to investigate how I would accomplish this as part of my project, but it is not a listed goal for my final project.
 
+### Data model
+
+Database
+  - Stores page templates
+  - Stores shirt design database
+    * shirt title, text of output, color of shirt, processed image size in pixels, original image, processed image
+    * ? username
+    * template parameters
+      1. Python modules that will actually do the data transformation from the input parameters.
+
 ### Technical Components
 
 Web Page html/css/js
@@ -104,14 +100,6 @@ Web Page html/css/js
     * Displays finished shirt design images in gallery form
     * Image links to order form for shirt
 
-Database
-  - Stores page templates
-  - Stores shirt design database
-    * shirt title, color of shirt, processed image size in pixels, original image, processed image
-    * ? username
-    * template parameters
-      1. Python modules that will actually do the data transformation from the input parameters.
-
 Python modules
   - ASCII art - converts image to grayscale then applies grid and substitutes alpha/numberic characters for image color in each grid returning a "ascii art" version of image
     * uses existing modules: pillow, PIL, numpy and module from 'Python playground'
@@ -119,11 +107,6 @@ Python modules
     * Query database for pages to display
     * Make Classes for shirt design database columns and build SQL for queries
     * Interact with glitch, ASCII, and other direct image manipulation modules
-
-    Modules for extended Functionality
-    - oregon trail - takes base image and adds user-entered text to base image
-    - glitch - alters image by changing image file data directly to output altered version
-      * uses existing modules: pillow, PIL, numpy, and github glitch module
 
 ### Timeline
 
@@ -172,3 +155,22 @@ Week 6: 6/6  - 6/9   | *review and refine*
 Extended Goal: Javascript interaction for shirt designer sections
   - I don't know exactly what to use and much work it takes
     * Resize and reposition image, alter generator effects via slide
+
+Modules for extended Functionality
+- oregon trail - takes base image and adds user-entered text to base image
+- glitch - alters image by changing image file data directly to output altered version
+  * uses existing modules: pillow, PIL, numpy, and github glitch module
+
+Full site features:
+
+1. Interactive custom tshirt designer
+  * Users upload text, image, pic from clip art
+2. Shirt generators
+  * Templates for shirt designs with parameters user can set
+  * Generators:
+    * ASCII art - user uploads image, images is converted to ASCII art and rendered on the shirt
+    * Oregon Trail - user inputs text, text is rendered along with vintage video game art
+    * Glitch - users input image, image is altered via 'glitch' process that changes the appearance of the image
+3. Marketplace
+  * Users can upload designs they create to Marketplace
+  * Any user can purchase shirt from marketplace, shirt creator gets percentage of sale
