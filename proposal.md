@@ -89,17 +89,18 @@ Week 6: 6/6  - 6/9   | *review and refine*
   * gallery page
   **Week 3 & 4**
 
-5. Connect and test gallery and order page
+5. Connect and test gallery and shirt page
   **Week 4 & 5**
 
 6. Refine design and Set up order processing
-  - Mostly outside of project scope...this is something that gives user an end point
-  - Clicking on shirt in gallery takes user to order form for shirt
+  - Finished MVP but continuing refinements
   **Week 5**
 
 7. Add other design generators
     * Oregon Trail and glitch modules
     * Investigate full shirt designer interface
+      - Mostly outside of project scope...this is something that gives user an end point
+      - Clicking on shirt in gallery takes user to order form for shirt
   **Week 5**
 
 ## Further Work
