@@ -1,108 +1,64 @@
-# Capstone Proposal
+## Proposal: Shirt Factory
 
-Jusin Epperly
-PDXCodeGuild Day class - March
+### Justin Epperly - PDXCodeGuild
 
-### Name
-What is the short name of your product or project?
+**Shirt Factory** is a web app that allows users to upload an image, transform that image to ASCII art, and render the transformed artwork as an image on a shirt.
 
-shirt_factory
+The ASCII art image is a rendering of the original image using only alpha/numeric characters.
 
-### Product Overview
-
-#### Introduction
-
-Users design tshirt using an image they provide or inputing parameters for a template, with options for transforming the image. Output is an shirt design they can order printed and/or upload to image gallery.
-
-
-#### Features
-
-Users input parameters and/or image via the web app and the system will return a processed image representing the shirt design for the web page to display. The input parameters and image are a tshirt design and the processed image output is the processed shirt design image.
-
-Users 'checkout' via an order form page, with a simple web form. Users select size and number of shirts they are purchasing. Image is uploaded to printing database.
-
-Users have the option to upload their final design to an image gallery and specify a title for the design.
-
-MVP for final project has features scaled-down.
-
-Project MVP features
+## Specific Functionality
 
 1. Main page with ASCII art generator
-2. Page for each finished design with links to purchase
+2. Page for each finished design
 3. Gallery of submitted designs
 
-### Specific Functionality
-
-**Shirt Factory pages and interface**
-
 #### Home page
-  * Shirt design section displays blank white shirt initially
 
-  * Design section options displayed via menu
-    1. Upload image from file or URL and set design size and shirt color parameters
-      * Transform image using ASCII generator
-      * Resize and arrange transformed image on blank shirt in section  
-      * Display original image thumbnail
+  * Shirt design section displays blank white shirt initially with an input form for the image file to be transformed
 
-    2. Finished design is uploaded to gallery with title and/or purchased and saved in database
+  * Form input for specifying a name for the design
+
+  * Page will have a menu linking to design gallery
 
 #### Shirt page (order form page)
-  * Displays final shirt image with form for user to specify order options
 
-  * Order options
-    1. size
-    2. number of shirts
+  * Displays final shirt image and name
 
-  * Option to upload design to gallery with title upon completing purchase
-
-  * Payment
-    * Uses link to Paypal's payment system CMS which opens in new window and handles financial transaction processing outside of this system.
+  * Links to home page
 
 #### Design gallery page
-  * Displays shirt design and title in 'gallery' saved in database
 
-  * Option to purchase design
-    - takes user to order form page
+  * Displays all shirt designs with titles
 
-### Data model
+  * Links to home page
 
-Database
-  - Django local server
-  - Page templates static and dynamic
-  - Stores shirt design database
-    * shirt title, text of output, color of shirt, processed image size in pixels, original image, processed image
-    * ? username
-    * template parameters
-      1. Python modules that will actually do the data transformation from the input parameters.
+## Data Model
 
-### Technical Components
+### User Input Image
 
-Web Page html/css/js
-  - Shirt designer section in Home page
-    * Menu to select user action (upload image, select color for shirt and design)
-    * Menu to select shirt color from palette - ? uses JS?
-    * Option to rotate to 'front' or 'back' of shirt to place image
-    * Apply changes
+  - Unique ID
+  - Image file uploaded by user
 
-  - User can position and resize uploaded image on blank shirt
-    * This involves JS
-    * User can position and resize transformed image on blank shirt
+### Shirt Image
 
-  - Order/gallery upload form page
-    * Users are displayed a final shirt design
-    * Users choose to upload to gallery or upload to gallery *and* order shirts
+  - Unique ID
+  - UID of original image
+  - timestamp of creation
+  - shirt title
+  - processed ASCII image
+  - finished shirt - processed image on blank shirt
 
-  - Design gallery
-    * Displays finished shirt design images in gallery form
-    * Image links to order form for shirt
+## Technical Components
 
-Python modules
-  - ASCII art - converts image to grayscale then applies grid and substitutes alpha/numberic characters for image color in each grid returning a "ascii art" version of image
+- ASCII art converter - converts image to grayscale then applies grid and substitutes alpha/numberic characters for image color in each grid returning a "ascii art" version of image
     * uses existing modules: pillow, PIL, numpy and module from 'Python playground'
-  - Django module
-    * Query database for pages to display
-    * Make Classes for shirt design database columns and build SQL for queries
-    * Interact with glitch, ASCII, and other direct image manipulation modules
+    * link: https://github.com/electronut/pp/tree/master/ascii
+
+- Django for managing web interactions
+
+- Pages will be generated by django templates using HTML and styled with css
+
+- Images from user and finished images from the ASCII converter will be transferred using UID
 
 ### Timeline
 
@@ -119,19 +75,17 @@ Week 6: 6/6  - 6/9   | *review and refine*
   **Week 1**
 
 2. Make test module for data transformation
-  * Still deciding which module to make first
-  * Options for first module
-    1. upload image to shirt section, allow user to position and resize
-    2. 'oregon trail' template, user adds text, output is fixed template with user text
+  * Install django
+  * Set up basic test page
   **Week 1 & 2**
 
 3. Make shirt database and connect to functioning test module and page.
-  * Begin testing first shirt design generator
+  * Begin testing ASCII art generator
   **Week 2 & 3**
 
 4. Create and style site pages
-  * home - start with *one* shirt design generator, ASCII art module
-  * order form page
+  * home
+  * finished shirt page
   * gallery page
   **Week 3 & 4**
 
@@ -148,6 +102,10 @@ Week 6: 6/6  - 6/9   | *review and refine*
     * Investigate full shirt designer interface
   **Week 5**
 
-Extended Goal: Javascript interaction for shirt designer sections
-  - I don't know exactly what to use and much work it takes
-    * Resize and reposition image, alter generator effects via slide
+## Further Work
+* Options for selecting color of shirt and color of print
+* Shirt image page will have order form linking to Paypal so any user can order any shirt
+* Add user login
+* Add user page which shows all designs by user
+* Pretty user interface
+* Add other generators, ex: Oregon Trail and glitch
