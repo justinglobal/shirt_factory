@@ -8,14 +8,14 @@ What is the short name of your product or project?
 
 shirt_factory
 
-### High-Level Product
+### Product Overview
 
-####What is your web app going to do?
+#### Introduction
 
 Users design tshirt using an image they provide or inputing parameters for a template, with options for transforming the image. Output is an shirt design they can order printed and/or upload to image gallery.
 
 
-####How does a user interact with it on a high level?
+#### Features
 
 Users input parameters and/or image via the web app and the system will return a processed image representing the shirt design for the web page to display. The input parameters and image are a tshirt design and the processed image output is the processed shirt design image.
 
@@ -64,15 +64,11 @@ Project MVP features
   * Option to purchase design
     - takes user to order form page
 
-### Possible additional Features
-  1. Users create designer profile. Designer profile has gallery of user's designs like main gallery
-  2. Allow users to add and format text only on shirt or with an uploaded image. Arrange both text and image elements in designer section.
-  3. Full custom shirt design interface. This is mostly Javascript and it is a long-term goal of the project. I hope to investigate how I would accomplish this as part of my project, but it is not a listed goal for my final project.
-
 ### Data model
 
 Database
-  - Stores page templates
+  - Django local server
+  - Page templates static and dynamic
   - Stores shirt design database
     * shirt title, text of output, color of shirt, processed image size in pixels, original image, processed image
     * ? username
@@ -155,22 +151,3 @@ Week 6: 6/6  - 6/9   | *review and refine*
 Extended Goal: Javascript interaction for shirt designer sections
   - I don't know exactly what to use and much work it takes
     * Resize and reposition image, alter generator effects via slide
-
-Modules for extended Functionality
-- oregon trail - takes base image and adds user-entered text to base image
-- glitch - alters image by changing image file data directly to output altered version
-  * uses existing modules: pillow, PIL, numpy, and github glitch module
-
-Full site features:
-
-1. Interactive custom tshirt designer
-  * Users upload text, image, pic from clip art
-2. Shirt generators
-  * Templates for shirt designs with parameters user can set
-  * Generators:
-    * ASCII art - user uploads image, images is converted to ASCII art and rendered on the shirt
-    * Oregon Trail - user inputs text, text is rendered along with vintage video game art
-    * Glitch - users input image, image is altered via 'glitch' process that changes the appearance of the image
-3. Marketplace
-  * Users can upload designs they create to Marketplace
-  * Any user can purchase shirt from marketplace, shirt creator gets percentage of sale
