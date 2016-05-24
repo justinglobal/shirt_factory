@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Shirt Factory Test Index</title>
+  </head>
+  <body>
+    <h2>Test display for Shirt Factory Designs</h2>
+    <h3><a href="{% url 'post' %}">Make a new design</a></h3>
+    {% for design in all_designs %}
+    <div>
+    <ul>Design info: {{ design }}</ul>
+      <li>Name: {{ design.design_name }}</li>
+      <li>Text Image: </li>
+      <p>{{ design.text_image|linebreaksbr }}</p>
+    </div>
+    {% endfor %}
+  </body>
+</html>

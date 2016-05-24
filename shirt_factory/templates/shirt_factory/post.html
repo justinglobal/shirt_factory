@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>test - Post an ascii art design</title>
+  </head>
+  <body>
+    <h2>Post an ascii art design</h2>
+    <form action="{% url 'design' %}" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+    <label>Design Name: <input type="text" name="design_name"></label>
+    <label>Text art: <textarea type="text" name="text_image"></textarea></label>
+    <label>Upload Image: <input type="file" name="image"></lable>
+    <input type="submit">
+    </form>
+  </body>
+</html>

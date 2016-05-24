@@ -16,6 +16,11 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from . import views
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^alldesigns$', views.render_all_designs, name='all'),
+    url(r'^post$', views.render_post_page, name='post'),
+    url(r'^design$', views.render_design_page, name='design'),
 ]
