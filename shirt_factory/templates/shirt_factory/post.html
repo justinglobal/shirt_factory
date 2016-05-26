@@ -9,7 +9,7 @@
     <form action="{% url 'design' %}" method="post" enctype="multipart/form-data">
       {% csrf_token %}
     <label>Design Name: <input type="text" name="design_name"></label>
-    <label>Text art: <textarea type="text" name="text_image"></textarea></label>
+    <label>Comment: <textarea type="text" name="text_image"></textarea></label>
     <label>Upload Image: <input type="file" name="image"></lable>
     <input type="submit">
     </form>

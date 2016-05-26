@@ -75,6 +75,12 @@ Notes:
 - need to use block display font or images are skewed
 - test text display needs to be 'block' not stretching to fit window
 
+5/24
+
+Busy day, had to work at ITT tech
+
+David's code really pushed me to get working.
+
 code from David:
 
 <form action="{% url 'upload_ack' %}" method="post">
@@ -98,3 +104,35 @@ def render_upload_ack(request):
 
 - Form note: when taking in image files via html form (from: https://docs.djangoproject.com/en/1.9/ref/request-response/#django.http.HttpRequest.FILES):
 Note that FILES will only contain data if the request method was POST and the <form> that posted to the request had enctype="multipart/form-data". Otherwise, FILES will be a blank dictionary-like object.
+
+**important note**
+- Changed ascii art generator in logic model to not need to use numpy. David wrote it. It is a one-liner:
+
+this code:
+def getAverageL(image):
+    """
+   Given PIL Image, return average value of grayscale value
+   """
+   # get image as numpy array
+   im = np.array(image)
+   # get shape
+   w,h = im.shape
+   # get average
+   return np.average(im.reshape(w*h))
+
+is replaced with this funtion:
+def getAverageNew(image):
+    return statistics.mean(image.getdata())
+
+- tested and it works! used a Pillow function: http://pillow.readthedocs.io/en/3.0.x/reference/Image.html#the-image-class Image.getdata()
+
+after class while at work at ITT I connected the database.
+
+#SUCCESS!!!
+
+it works but everything is wrong with it
+
+- font of text needs to be fixed-width
+- extra chars in display (this probably can be fixed using ascii.py's other functions)
+- rebuild database
+- each design gets its own URL, do this in urls.py

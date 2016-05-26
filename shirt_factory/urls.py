@@ -23,4 +23,5 @@ urlpatterns = [
     url(r'^alldesigns$', views.render_all_designs, name='all'),
     url(r'^post$', views.render_post_page, name='post'),
     url(r'^design$', views.render_design_page, name='design'),
+    url(r'^design/(?P<design_id>.+)$', views.render_design_image, name='image'),
 ]
