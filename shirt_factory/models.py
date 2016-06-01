@@ -3,22 +3,22 @@ from django.db import models
 import datetime
 from PIL import Image
 
-class Design(models.Model):
+class ShirtDesign(models.Model):
 
-    design_name = models.TextField()
-    text_image = models.TextField()
+    design_name = models.TextField(unique=True)
+    comment = models.TextField()
     time_stamp = models.DateTimeField()
-    image = models.ImageField()
-    ascii_img = models.TextField()
+    input_img_file = models.ImageField()
+    ascii_str = models.TextField()
 
     def __str__(self):
         return '{} - {}'.format(self.design_name, self.time_stamp)
 
     def __repr__(self):
-        return 'Design(design_name={!r}, text_image={!r}, time_stamp={!r}, image={!r}, ascii_img={!r})'.format(
+        return 'ShirtDesign(design_name={!r}, comment={!r}, time_stamp={!r}, input_img_file={!r}, ascii_str={!r})'.format(
             self.design_name,
-            self.text_image,
+            self.comment,
             self.time_stamp,
-            self.image,
-            self.ascii_img,
+            self.input_img_file,
+            self.ascii_str,
         )

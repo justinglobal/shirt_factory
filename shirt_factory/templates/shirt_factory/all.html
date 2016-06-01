@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,8 +12,12 @@
     <div>
     <ul>Design info: {{ design }}</ul>
       <li>Name: {{ design.design_name }}</li>
-      <li>Comment: </li>
-      <p>{{ design.text_image|linebreaksbr }}</p>
+      <li>Comment:
+        <p>{{ design.comment|linebreaksbr }}</p>
+      </li>
+      <li>design id: {{ design.id }}</li>
+      <div><img src="{% url 'thumb' design.id %}"></div>
+      <div><img src="{% url 'image' design.id %}"></div>
     </div>
     {% endfor %}
   </body>

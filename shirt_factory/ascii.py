@@ -92,34 +92,24 @@ def convertImageToAscii(fileName, cols, scale, moreLevels):
             # append ascii char to string
             aimg[j] += gsval
 
-    # return txt image as aimg
+    # return txt ascii image list of strs as aimg
     # format aimg here
-    txt_for_png = [line + "\n" for line in aimg]
-    txt_for_png_join = ''.join(txt_for_png)
+    aimg_list_with_linebreak = [line + "\n" for line in aimg]
+    ascii_str = ''.join(aimg_list_with_linebreak)
 
-    return txt_for_png_join
+    return ascii_str
 
-def convert_text_to_png(ascii_img, size):
-    # PIL.ImageDraw.Draw.multiline_text(xy, text, fill=None, font=None, anchor=None, spacing=0, align="left")
+def convert_text_to_png(ascii_str, size):
     print('ascii_img below________________________________')
-    print(type(ascii_img), ascii_img)
+    print(type(ascii_str), ascii_str)
     im = Image.new('RGBA', size, (255, 0, 0, 0))
-    # txt_raw = ['@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@', '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%*+========+***#%%@@@%%%@@@%#****+====++%@@@@@@@', '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*=#@+============%*====+#*=============#@@@@@@@', '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@**@@#+==========%*=====#*===========+#@@@@@@@@', '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%+*@@%+=========%*=====#*===========*@@@@@@@@@', '@@@@@@@%%%@@%*%@@@@@@@@@@@@@@@@@@@@#+*@@#=========%*=====#*==========*@@@@@@@@@@', '@@@@@@@@%+====***==*********%@@@@@@@**@@#=========%*=====#*==========@@@@@@@@@@@', '@@@@@@@*+++=++===============+@@@@@@*#####%%%#**#%%#*****###%%%#**#%#@@@@@@@@@@@', '@@@@@@@@@@@%**===============*%%%%%%#*+*#@#*%@=+%#****==+*%%**%%=*%*#@@@@@@@@@@@', '@@@@@@@@@@@@@@====+++##*====%@@@@@@@%#*@@#*#%#=+%%##@@++#@@+#%%*=*%###@@@@@@@@@@', '@@@@@@@@@@@@@#=+*++%@@@+=**=@@@@@@@@@@@@@@#*#@=*%*#@@@@@@@@@#*%%=*#**%@@@@@@@@@@', '@@@@@@@@@@@@%%%@@@%@@@@@@%%%@@@@@@@@@@@@@@@@%%%%%@@@@@@@@@@@@@%%%%%@@@@@@@@@@@@@', '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@', '@@@@@%####################################################################@@@@@@', '@@@@@+%#%%%%%%%@@#%@%%%@%%#@@%%#%%#@%#@@%%@##@@%#%%%@#@%#%%%@#%%%%%%%@%@@+%@@@@@', '@@@@@+%@#@%%@%%@@%%%%#@#@#%@@%%%#%%@%#@@%%@#@@@%%%#+%#%%%@%%@%%%%@#@@#*%@+%@@@@@', '@@@@@%####################################################################@@@@@@']
-    # ascii_img = txt_raw
 
-    # txt_for_png = [line + "\n" for line in ascii_img]
-    # START HERE
-    # txt_im is the problem, above operation is adding '\n' to every character in string, not end of string
-    # print('txt_for_png below________________________________')
-    # print(txt_for_png)
-    # txt_for_png_join = ''.join(txt_for_png)
-    # print('txt_for_png_join below________________________________')
-    # print(txt_for_png_join)
     draw = ImageDraw.Draw(im)
-    draw.text((20,20), ascii_img, fill='purple')
+    draw.text((20,20), ascii_str, fill='purple')
     print(im)
+    ascii_img_obj = im
     # im.save('drawtext2.png')
-    return im
+    return ascii_img_obj
 
 # main() function
 def main():

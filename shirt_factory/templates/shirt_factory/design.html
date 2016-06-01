@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,13 +7,11 @@
   </head>
   <body>
     <h2>This is a finished design page</h2>
-    <div>{{ design_name }}</div>
-    <div>{{ text_image }}</div>
-    <div>{{ time_stamp }}</div>
-    <div>{{ image }}</div>
-    <div>{{ image_out }}</div>
+    <div>{{ design.design_name }}</div>
+    <div>{{ design.text_image }}</div>
+    <div>{{ design.time_stamp }}</div>
+    <div>{{ design.comment }}</div>
     <div><img src="{% url 'image' design.id %}"></div>
-    <div>{{ png_out }}</div>
     <h3><a href="{% url 'all' %}">View all designs</a></h3>
   </body>
 </html>

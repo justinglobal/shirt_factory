@@ -136,3 +136,23 @@ it works but everything is wrong with it
 - extra chars in display (this probably can be fixed using ascii.py's other functions)
 - rebuild database
 - each design gets its own URL, do this in urls.py
+
+5/26
+
+alot happened today, but it can be summarized by me getting the image to display properly
+
+my main problem was that my database was casting my ascii list of strings to a string when saving it, causing my formatting steps to break. I didn't catch it b/c my testing list was taken from before it gets saved in the database.
+
+I renamed everything.
+
+Need to consider adding database class for serving my images
+
+5/27
+
+potential image storage class
+
+class ImageServe(models.Model):
+
+    background_shirt = models.DataField()
+
+javascript suggestion from david:  avoid using IDs, especially programmatically generated ones. There's almost always a way to more cleanly and concisely get what you want done. In this case it's using the fact that an event handler function has access to the element clicked on; then you can use jQuery selections to find the element you want to modify.

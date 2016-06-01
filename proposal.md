@@ -61,7 +61,8 @@ The ASCII art image is a rendering of the original image using only alpha/numeri
 - Images from user and finished images from the ASCII converter will be transferred using UID
 
 ### Timeline
-
+Date                 | Stage
+-------------------- | --------------------
 Week 1: 5/2  - 5/6   | *Stage 1 & 2*
 Week 2: 5/9  - 5/13  | *Stage 2 & 3*
 Week 3: 5/16 - 5/20  | *Stage 3 & 4*
