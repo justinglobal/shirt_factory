@@ -1,0 +1,12 @@
+/*css for shirt_factory project*/
+
+.backgroundshirt {
+  background-image: url(/static/shirt_factory/background-shirt.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*#preview_area {
+  margin-top: 70px;
+  margin-left: 70px;
+}*/

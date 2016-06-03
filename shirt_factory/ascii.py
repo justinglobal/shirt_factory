@@ -22,6 +22,7 @@ gscale1 = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,\"^`'
 # 10 levels of gray
 gscale2 = '@%#*+=-:. '
 
+# below not used because getAverageNew() function replaces it.
 # def getAverageL(image):
 #     """
 #     Given PIL Image, return average value of grayscale value
@@ -34,11 +35,14 @@ gscale2 = '@%#*+=-:. '
 #     return np.average(im.reshape(w*h))
 
 def getAverageNew(image):
+    """
+    Given PIL Image, returns average value of grayscale value.
+    """
     return statistics.mean(image.getdata())
 
 def convertImageToAscii(fileName, cols, scale, moreLevels):
     """
-    Given Image and dims (rows, cols) returns an m*n list of Images
+    Given Image and dimensions (rows, cols) returns an m*n list of strings representing the ascii image.
     """
     # declare globals
     global gscale1, gscale2
@@ -100,6 +104,9 @@ def convertImageToAscii(fileName, cols, scale, moreLevels):
     return ascii_str
 
 def convert_text_to_png(ascii_str, size):
+    """
+    Given size makes blank img, writes list of strings onto image as image data
+    """
     print('ascii_img below________________________________')
     print(type(ascii_str), ascii_str)
     im = Image.new('RGBA', size, (255, 0, 0, 0))

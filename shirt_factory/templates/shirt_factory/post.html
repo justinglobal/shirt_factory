@@ -7,18 +7,19 @@
     <title>test - Post an ascii art design</title>
   </head>
   <body>
-    <h2>Post an ascii art design</h2>
-    <form action="{% url 'preview' %}" method="post" enctype="multipart/form-data">
-      {% csrf_token %}
-    <label>Design Name: <input type="text" name="design_name"></label>
-    <label>Comment: <textarea type="text" name="comment"></textarea></label>
-    <label>Upload Image: <input id="input_img_file" type="file" name="input_img_file"></lable>
-    <input type="submit">
-    </form>
-    <section>
-    </section>
-    <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
-    <script src="{% static 'shirt_factory/csrf.js' %}"></script>
-    <script src="{% static 'shirt_factory/shirt_factory.js' %}"></script>
+      <h2>Post an ascii art design</h2>
+      <form action="{% url 'submit' %}" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <label>Design Name: <input type="text" name="design_name"></label>
+          <label>Comment: <textarea type="text" name="comment"></textarea></label>
+          <label>Upload Image: <input id="input_img_file" type="file" name="input_img_file"></label>
+          <button id="preview" formaction="{% url 'preview' %}" method="post" enctype="multipart/form-data" name="preview">Preview</button>
+          <input type="submit">
+      </form>
+      <section id="preview_area" class="backgroundshirt">
+      </section>
+      <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
+      <script src="{% static 'shirt_factory/csrf.js' %}"></script>
+      <script src="{% static 'shirt_factory/shirt_factory.js' %}"></script>
   </body>
 </html>
