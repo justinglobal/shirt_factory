@@ -1,7 +1,8 @@
 'use strict';
 
 /*
-Makes encoded string of ascii art img file adds it as an <img> source url and prepends the <img> to an html element via selector
+Makes encoded string of ascii art img file adds it as an <img> source url
+and prepends the <img> to an html element via selector
 */
 function submitImage() {
   var formData = new FormData();
@@ -22,6 +23,9 @@ function submitImage() {
   });
 }
 
+/*
+Sets id=preview to run submitImage on click and prevent default reload.
+*/
 function registerInitialEventHandlers() {
   $('#preview').on('click', function(event) {
     event.preventDefault();

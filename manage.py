@@ -1,9 +1,11 @@
-#!/usr/bin/env python
+"""manage.py for shirt_factory project"""
+
+# !/usr/bin/env python
 import os
 import sys
 
-if __name__ == "__main__":
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "shirt_factory.settings")
+if __name__ == '__main__':
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'shirt_factory.settings')
 
     from django.core.management import execute_from_command_line
 

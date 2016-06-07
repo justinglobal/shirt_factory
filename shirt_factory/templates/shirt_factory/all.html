@@ -3,6 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'shirt_factory/style.css' %}">
     <title>Shirt Factory Test Index</title>
   </head>
   <body>
@@ -16,8 +17,10 @@
         <p>{{ design.comment|linebreaksbr }}</p>
       </li>
       <li>design id: {{ design.id }}</li>
-      <div><img src="{% url 'thumb' design.id %}"></div>
-      <div><img src="{% url 'image' design.id %}"></div>
+      <section>
+        <div><img src="{% url 'thumb' design.id %}"></div>
+        <div><img src="{% url 'image' design.id %}"></div>
+      </section>
     </div>
     {% endfor %}
   </body>

@@ -3,15 +3,19 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'shirt_factory/style.css' %}">
     <title>Design</title>
   </head>
   <body>
     <h2>This is a finished design page</h2>
+    <h4><a href="{% url 'all' %}">View all designs</a></h4>
     <div>{{ design.design_name }}</div>
+    <div>design ID: {{ design.id }}</div>
     <div>{{ design.text_image }}</div>
     <div>{{ design.time_stamp }}</div>
     <div>{{ design.comment }}</div>
-    <div><img src="{% url 'image' design.id %}"></div>
-    <h3><a href="{% url 'all' %}">View all designs</a></h3>
+    <section>
+      <div><img src="{% url 'image' design.id %}"></div>
+    </section>
   </body>
 </html>

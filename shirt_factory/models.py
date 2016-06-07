@@ -1,10 +1,15 @@
+"""Models.py for shirt_factory project"""
+
 from django.db import models
 
-import datetime
-from PIL import Image
+# from PIL import Image
+# import datetime
+
 
 class ShirtDesign(models.Model):
+    """Creates and defines ShirtDesign class."""
 
+    # user = models.ForeignKey(User)
     design_name = models.TextField(unique=True)
     comment = models.TextField()
     time_stamp = models.DateTimeField()
@@ -12,9 +17,11 @@ class ShirtDesign(models.Model):
     ascii_str = models.TextField()
 
     def __str__(self):
+        """Format str to show design name and time stamp"""
         return '{} - {}'.format(self.design_name, self.time_stamp)
 
     def __repr__(self):
+        """Format repr to show all saved database fields"""
         return 'ShirtDesign(design_name={!r}, comment={!r}, time_stamp={!r}, input_img_file={!r}, ascii_str={!r})'.format(
             self.design_name,
             self.comment,

@@ -3,10 +3,19 @@
 .backgroundshirt {
   background-image: url(/static/shirt_factory/background-shirt.jpg);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto;
 }
 
 /*#preview_area {
   margin-top: 70px;
   margin-left: 70px;
 }*/
+
+body {
+  background-image: url(/static/shirt_factory/tilebackground01.jpg);
+}
+
+section {
+  background-color: #fff;
+  /*opacity: .85;*/
+}
