@@ -3,23 +3,42 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <link href='https://fonts.googleapis.com/css?family=Orbitron:400,900' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{% static 'shirt_factory/style.css' %}">
-    <title>test - Post an ascii art design</title>
+    <title>ASCII art generator by Shirt Factory</title>
   </head>
-  <body>
-      <h2>Post an ascii art design</h2>
-      <form action="{% url 'submit' %}" method="post" enctype="multipart/form-data">
-          {% csrf_token %}
-          <label>Design Name: <input type="text" name="design_name"></label>
-          <label>Comment: <textarea type="text" name="comment"></textarea></label>
-          <label>Upload Image: <input id="input_img_file" type="file" name="input_img_file"></label>
-          <button id="preview" formaction="{% url 'preview' %}" method="post" enctype="multipart/form-data" name="preview">Preview</button>
-          <input type="submit">
+<body>
+  <header class="transluc">
+      <h1 id="bigheadertext">ASCII art generator</h1>
+      <h2>Create an ASCII art png from any image</h2>
+  </header>
+  <nav>
+    <menu class="transluc">
+      <menuitem><a href="{% url 'post' %}">Home</a></menuitem> |
+      <!-- <menuitem><a href="http://www.shirtfactorypdx.com/shop/">Store</a></menuitem> | -->
+      <menuitem><a href="{% url 'all' %}">Design Gallery</a></menuitem> |
+      <menuitem><a href="about:blank"><strike>About</strike></a></menuitem>
+    </menu>
+  </nav>
+  <article>
+    <div>
+      <h2 class="transluc">Post an ascii art design</h2>
+      <form  class="transluc" action="{% url 'submit' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label>Design Name: <input type="text" name="design_name"></label>
+        <label>Comment: <textarea type="text" name="comment"></textarea></label>
+        <label>Upload Image: <input id="input_img_file" type="file" name="input_img_file"></label>
+        <button id="preview" formaction="{% url 'preview' %}" method="post" enctype="multipart/form-data" name="preview">Preview</button>
+        <input type="submit">
       </form>
-      <section id="preview_area" class="backgroundshirt">
-      </section>
-      <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
-      <script src="{% static 'shirt_factory/csrf.js' %}"></script>
-      <script src="{% static 'shirt_factory/shirt_factory.js' %}"></script>
-  </body>
+    </div>
+    <section id="preview_area" class="transluc">
+    </section>
+    <!-- <section id="preview_area" class="backgroundshirt">
+    </section> -->
+  </article>
+  <script src="//code.jquery.com/jquery-2.2.3.js"></script>
+  <script src="{% static 'shirt_factory/csrf.js' %}"></script>
+  <script src="{% static 'shirt_factory/shirt_factory.js' %}"></script>
+</body>
 </html>

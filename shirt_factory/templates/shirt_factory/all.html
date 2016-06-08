@@ -3,25 +3,28 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <link href='https://fonts.googleapis.com/css?family=Orbitron:400,900' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{% static 'shirt_factory/style.css' %}">
-    <title>Shirt Factory Test Index</title>
+    <title>All Designs - ASCII art generator by Shirt Factory</title>
   </head>
-  <body>
+<body>
+  <div class="transluc">
     <h2>Test display for Shirt Factory Designs</h2>
     <h3><a href="{% url 'post' %}">Make a new design</a></h3>
-    {% for design in all_designs %}
-    <div>
+  </div>
+  {% for design in all_designs %}
+  <div>
     <ul>Design info: {{ design }}</ul>
       <li>Name: {{ design.design_name }}</li>
       <li>Comment:
         <p>{{ design.comment|linebreaksbr }}</p>
       </li>
       <li>design id: {{ design.id }}</li>
-      <section>
+    <section id="preview_area" class="transluc">
         <div><img src="{% url 'thumb' design.id %}"></div>
         <div><img src="{% url 'image' design.id %}"></div>
-      </section>
-    </div>
-    {% endfor %}
-  </body>
+    </section>
+  </div>
+  {% endfor %}
+</body>
 </html>

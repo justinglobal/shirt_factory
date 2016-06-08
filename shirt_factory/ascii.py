@@ -113,7 +113,9 @@ def convert_image_to_ascii(filename, cols, scale, morelevels):
     ascii_str = ''.join(aimg_list_with_linebreak)
     # print('W, H below________________________________')
     # print(W, H)
-    return ascii_str, (W, H)
+    # get cols and rows here or comput it from ascii_str
+    # return ascii_str, (W, H)
+    return ascii_str
 
 
 def convert_text_to_png(ascii_str, size):
@@ -126,7 +128,8 @@ def convert_text_to_png(ascii_str, size):
     im = Image.new('RGBA', size, (255, 0, 0, 0))
 
     draw = ImageDraw.Draw(im)
-    draw.text((20, 20), ascii_str, fill='purple')
+    # draw.text((1, 1), ascii_str, fill='purple')
+    draw.text((1, 1), ascii_str, fill='black')
     print(im)
     ascii_img_obj = im
     # im.save('drawtext2.png')

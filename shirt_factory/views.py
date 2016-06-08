@@ -26,7 +26,9 @@ def render_post_page(request):
 
 
 def render_submit(request):
-    """Get arguments for design, make design, return redirect URL with ID"""
+    """On post page submit, get arguments for design, make design,
+    return redirect URL with ID
+    """
     design_name = request.POST['design_name']
     comment = request.POST['comment']
     input_img_file = request.FILES['input_img_file']
