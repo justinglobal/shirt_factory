@@ -9,3 +9,5 @@ venv
 
 # Django Default DB
 db.sqlite3
+
+.env
