@@ -10,7 +10,7 @@ class ShirtDesign(models.Model):
     """Creates and defines ShirtDesign class."""
 
     # user = models.ForeignKey(User)
-    design_name = models.TextField(unique=True)
+    design_name = models.TextField()
     comment = models.TextField()
     time_stamp = models.DateTimeField()
     input_img_file = models.ImageField()
