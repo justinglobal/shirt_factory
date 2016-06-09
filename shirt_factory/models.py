@@ -2,14 +2,10 @@
 
 from django.db import models
 
-# from PIL import Image
-# import datetime
-
 
 class ShirtDesign(models.Model):
     """Creates and defines ShirtDesign class."""
 
-    # user = models.ForeignKey(User)
     design_name = models.TextField()
     comment = models.TextField()
     time_stamp = models.DateTimeField()

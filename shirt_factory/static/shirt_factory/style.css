@@ -1,20 +1,13 @@
 /*css for shirt_factory project*/
 
-/*.backgroundshirt {
-  background-image: url(/static/shirt_factory/background-shirt.jpg);
-  background-repeat: no-repeat;
-  background-size: auto;
-}*/
 
 .transluc {
   background-color: #fff;
   opacity: .85;
-  /*background-color: hsla(360, 100%, 100%, 0.5);*/
 }
 
 #preview_area {
   margin-top: 10px;
-  /*margin-left: 70px;*/
   opacity: 1;
 }
 
@@ -49,10 +42,12 @@ section {
   flex-grow: 1;
   flex-shrink: 0;
   flex-basis: 200px;
-      /* align-items: baseline; */
-      /* align-content: center; */
-      /* justify-content: center; */
-      /* display: flex; */
-  /*background-color: #fff;*/
-  /*opacity: .85;*/
 }
+
+/*possible shirt background for image preview*/
+/*.backgroundshirt {
+  background-image: url(/static/shirt_factory/background-shirt.jpg);
+  background-repeat: no-repeat;
+  background-size: auto;
+}*/
+/*background-color: hsla(360, 100%, 100%, 0.5);*/

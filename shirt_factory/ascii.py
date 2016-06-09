@@ -3,18 +3,11 @@ ascii.py
 A python program that convert images to ASCII art.
 """
 
-# import sys
-# import random
+
 import argparse
-# import numpy as np
-# import math
 import statistics
 
-# from PIL import Image
 from PIL import Image, ImageDraw
-# , ImageFont
-
-# import os
 
 # ascii.py adapted from Python Playground by Mahesh Venkitachalam
 # gray scale level values from:
@@ -49,7 +42,6 @@ def get_average_new(image):
 
 
 def convert_image_to_ascii(filename, cols, scale, morelevels):
-    # convertImageToAscii
     """
     Given Image and dimensions (rows, cols) returns an m*n list of strings
     representing the ascii image.
@@ -111,10 +103,6 @@ def convert_image_to_ascii(filename, cols, scale, morelevels):
     # format aimg here
     aimg_list_with_linebreak = [line + '\n' for line in aimg]
     ascii_str = ''.join(aimg_list_with_linebreak)
-    # print('W, H below________________________________')
-    # print(W, H)
-    # get cols and rows here or comput it from ascii_str
-    # return ascii_str, (W, H)
     return ascii_str
 
 
@@ -128,14 +116,15 @@ def convert_text_to_png(ascii_str, size):
     im = Image.new('RGBA', size, (255, 0, 0, 0))
 
     draw = ImageDraw.Draw(im)
-    # draw.text((1, 1), ascii_str, fill='purple')
+    
     draw.text((1, 1), ascii_str, fill='black')
     print(im)
     ascii_img_obj = im
-    # im.save('drawtext2.png')
+    # can save locally here with code below
+    # im.save('filename.png')
     return ascii_img_obj
 
-    # background_img_obj = backround.open()
+
 
 
 # main() function
