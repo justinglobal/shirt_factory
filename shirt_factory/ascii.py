@@ -125,8 +125,6 @@ def convert_text_to_png(ascii_str, size):
     return ascii_img_obj
 
 
-
-
 # main() function
 def main():
     """main function takes parser args and outputs .txt file"""

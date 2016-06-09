@@ -2,7 +2,6 @@
 
 import datetime
 
-from PIL import Image
 
 from . import ascii
 from . import models
@@ -61,7 +60,6 @@ def create_preview_from_image(input_img_file):
     Given input image, converts image to asccii str then makes str into
     image for preview
     """
-
     ascii_str = ascii.convert_image_to_ascii(input_img_file, 160, .4, False)
     image_size = get_img_size_from_ascii_str(ascii_str)
     ascii_img_obj = ascii.convert_text_to_png(ascii_str, image_size)

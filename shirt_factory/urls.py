@@ -24,7 +24,11 @@ urlpatterns = [
     url(r'^post$', views.render_post_page, name='post'),
     url(r'^post/submit$', views.render_submit, name='submit'),
     url(r'^post/preview$', views.render_preview, name='preview'),
-    url(r'^design/(?P<design_id>\d+)$', views.render_design_page, name='design'),
-    url(r'^design/image/(?P<design_id>\d+)$', views.render_design_image, name='image'),
-    url(r'^design/thumb/(?P<design_id>\d+)$', views.render_design_thumb_image, name='thumb')
+    url(r'^design/(?P<design_id>\d+)$', views.render_design_page,
+        name='design'),
+    url(r'^design/image/(?P<design_id>\d+)$',
+        views.render_design_image,
+        name='image'),
+    url(r'^design/thumb/(?P<design_id>\d+)$', views.render_design_thumb_image,
+        name='thumb')
 ]
