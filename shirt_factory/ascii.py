@@ -116,7 +116,7 @@ def convert_text_to_png(ascii_str, size):
     im = Image.new('RGBA', size, (255, 0, 0, 0))
 
     draw = ImageDraw.Draw(im)
-    
+
     draw.text((1, 1), ascii_str, fill='black')
     print(im)
     ascii_img_obj = im
