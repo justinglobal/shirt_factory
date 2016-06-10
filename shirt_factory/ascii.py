@@ -14,7 +14,8 @@ from PIL import Image, ImageDraw
 # http://paulbourke.net/dataformats/asciiart/
 
 # 70 levels of gray
-gscale1 = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,\"^`'. "
+gscale1 = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,\"^`\
+'. "
 # 10 levels of gray
 gscale2 = '@%#*+=-:. '
 

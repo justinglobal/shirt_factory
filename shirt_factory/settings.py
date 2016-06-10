@@ -71,7 +71,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'shirt_factory.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
