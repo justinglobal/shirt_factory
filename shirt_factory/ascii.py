@@ -111,14 +111,9 @@ def convert_text_to_png(ascii_str, size):
     Given size makes blank img, writes list of strings onto image as image data
     and returns ascii img object
     """
-    print('ascii_img below________________________________')
-    print(type(ascii_str), ascii_str)
     im = Image.new('RGBA', size, (255, 0, 0, 0))
-
     draw = ImageDraw.Draw(im)
-
     draw.text((1, 1), ascii_str, fill='black')
-    print(im)
     ascii_img_obj = im
     # can save locally here with code below
     # im.save('filename.png')
