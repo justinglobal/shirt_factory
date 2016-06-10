@@ -72,9 +72,7 @@ def render_design_image(request, design_id):
     for rendering to browser
     """
     design = logic.get_design_by_id(design_id)
-    print(design.ascii_str)
     ascii_img_obj = logic.create_png_from_design(design)
-    print(ascii_img_obj)
     ascii_img_file = HttpResponse(content_type='image/png')
     ascii_img_obj.save(ascii_img_file, format='png')
     return ascii_img_file
@@ -86,7 +84,6 @@ def render_design_thumb_image(request, design_id):
     thumb size img file for rendering to browser
     """
     design = logic.get_design_by_id(design_id)
-    print(design.ascii_str)
     ascii_img_thumb_obj = logic.create_thumb_from_ascii_img_obj(design)
     ascii_img_thumb_file = HttpResponse(content_type='image/png')
     ascii_img_thumb_obj.save(ascii_img_thumb_file, format='png')
