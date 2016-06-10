@@ -18,7 +18,12 @@ class ShirtDesign(models.Model):
 
     def __repr__(self):
         """Format repr to show all saved database fields"""
-        return 'ShirtDesign(design_name={!r}, comment={!r}, time_stamp={!r}, input_img_file={!r}, ascii_str={!r})'.format(
+        return 'ShirtDesign(\
+                design_name={!r},\
+                comment={!r},\
+                time_stamp={!r},\
+                input_img_file={!r},\
+                ascii_str={!r})'.format(
             self.design_name,
             self.comment,
             self.time_stamp,
