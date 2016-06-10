@@ -23,11 +23,6 @@ gscale2 = '@%#*+=-:. '
 def get_average_new(image):
     """Given PIL Image, returns average value of grayscale value."""
     return statistics.mean(image.getdata())
-# getAverageNew
-# def getInputSize(filename):
-#     """
-#     Given user input file gets tuple of image w and h
-#     """
 
 
 def convert_image_to_ascii(filename, cols, scale, morelevels):
