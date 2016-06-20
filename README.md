@@ -33,7 +33,3 @@ Pillow 3.2.0
   - design page and image have permanent link
 
 3. View all designs page - view all designs and a thumbnail size version
-
-4. Modifications
-  - Toggle line 119 in ascii.py to save image locally for preview during development
-  - Goto https://github.com/electronut/pp/tree/master/ascii to see all the image editing functionality of ascii.py
