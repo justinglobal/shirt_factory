@@ -1,24 +1,32 @@
 {% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <link href='https://fonts.googleapis.com/css?family=Orbitron:400,900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="{% static 'shirt_factory/style.css' %}">
-    <title>Design</title>
-  </head>
-  <body>
-    <div class="transluc">
-      <h2>This is a finished design page</h2>
-      <h4><a href="{% url 'all' %}">View all designs</a></h4>
-      <div>{{ design.design_name }}</div>
-      <div>design ID: {{ design.id }}</div>
-      <div>{{ design.text_image }}</div>
-      <div>{{ design.time_stamp }}</div>
-      <div>{{ design.comment }}</div>
-    </div>
+<head>
+  <meta charset="utf-8">
+  <link href='https://fonts.googleapis.com/css?family=Orbitron:400,900' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{% static 'shirt_factory/style.css' %}">
+  <title>Design</title>
+</head>
+<body>
+  <header class="transluc">
+    <h2>This is a finished design page</h2>
+    <h4><a href="{% url 'all' %}">Click here to view all designs</a></h4>
+  </header>
+  <nav class="transluc">
+    <a href="{% url 'post' %}">Home</a>
+    <a id="menupad" href="{% url 'all' %}">Design Gallery</a>
+    <a href="about:blank"><strike>About</strike></a>
+  </nav>
+  <article class="transluc">
+      <ul>
+        <li>design name: {{ design.design_name }}</li>
+        <li>design ID: {{ design.id }}</li>
+        <li>time stamp: {{ design.time_stamp }}</li>
+        <li>comment: {{ design.comment }}</li>
+    </ul>
     <section id="preview_area" class="transluc">
-      <div><img src="{% url 'image' design.id %}"></div>
+      <div><img  class="main_img" src="{% url 'image' design.id %}"></div>
     </section>
-  </body>
+  </article>
+</body>
 </html>

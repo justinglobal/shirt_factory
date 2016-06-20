@@ -12,3 +12,5 @@ db.sqlite3
 
 # env config for Postgres db
 .env
+
+ascii-refactor.py

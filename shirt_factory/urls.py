@@ -20,6 +20,7 @@ from . import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', views.render_post_page, name='post'),
     url(r'^alldesigns$', views.render_all_designs, name='all'),
     url(r'^post$', views.render_post_page, name='post'),
     url(r'^post/submit$', views.render_submit, name='submit'),

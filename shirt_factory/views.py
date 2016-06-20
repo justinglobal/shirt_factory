@@ -84,7 +84,7 @@ def render_design_thumb_image(request, design_id):
     thumb size img file for rendering to browser
     """
     design = logic.get_design_by_id(design_id)
-    ascii_img_thumb_obj = logic.create_thumb_from_ascii_img_obj(design)
+    ascii_img_thumb_obj = logic.create_thumb_png_from_ascii_img_obj(design)
     ascii_img_thumb_file = HttpResponse(content_type='image/png')
     ascii_img_thumb_obj.save(ascii_img_thumb_file, format='png')
     return ascii_img_thumb_file

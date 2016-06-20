@@ -18,6 +18,7 @@ function submitImage() {
     success: function(data) {
       var imgElement = $('<img>');
       imgElement.attr('src', 'data:image/png;base64,' + data);
+      imgElement.attr('class', 'main_img');
       $('#preview_area').prepend(imgElement);
     }
   });
