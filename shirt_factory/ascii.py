@@ -125,8 +125,8 @@ def get_str_from_char_list(ascii_list_of_rows):
 
 def convert_image_to_ascii(filename, cols, scale, morelevels):
     """
-    Given image file, cols, scale factor, and # of levels, makes string of
-    ascii chars representing image.
+    Given image file, cols, scale factor, and # of grayscale levels, makes
+    string of ascii chars representing image.
     """
     image = convert_to_grayscale(filename)
     width_input_img, height_input_img = get_input_dims(image)

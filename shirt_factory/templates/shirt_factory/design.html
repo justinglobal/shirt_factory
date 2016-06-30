@@ -17,15 +17,15 @@
     <a id="menupad" href="{% url 'all' %}">Design Gallery</a>
     <a href="about:blank"><strike>About</strike></a>
   </nav>
-  <article class="transluc">
-      <ul>
-        <li>design name: {{ design.design_name }}</li>
-        <li>design ID: {{ design.id }}</li>
-        <li>time stamp: {{ design.time_stamp }}</li>
-        <li>comment: {{ design.comment }}</li>
+  <article>
+    <ul class="transluc">
+      <li>design name: {{ design.design_name }}</li>
+      <li>design ID: {{ design.id }}</li>
+      <li>time stamp: {{ design.time_stamp }}</li>
+      <li>comment: {{ design.comment }}</li>
     </ul>
-    <section id="preview_area" class="transluc">
-      <div><img  class="main_img" src="{% url 'image' design.id %}"></div>
+    <section id="preview_area">
+      <div><img class="main_img" src="{% url 'image' design.id %}"></div>
     </section>
   </article>
 </body>
