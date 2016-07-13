@@ -1,6 +1,7 @@
 """
 ascii.py
 A python program that convert images to ASCII art.
+Local test version.
 """
 
 import statistics
@@ -10,6 +11,7 @@ from PIL import Image, ImageDraw
 # ascii.py adapted from Python Playground by Mahesh Venkitachalam
 # gray scale level values from:
 # http://paulbourke.net/dataformats/asciiart/
+
 
 
 def get_average_new(image):
