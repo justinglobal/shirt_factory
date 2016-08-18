@@ -6,7 +6,7 @@ Local test version.
 
 import statistics
 
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFont
 
 # ascii.py adapted from Python Playground by Mahesh Venkitachalam
 # gray scale level values from:
