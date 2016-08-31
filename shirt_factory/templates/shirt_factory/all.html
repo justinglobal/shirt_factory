@@ -1,30 +1,37 @@
 {% load staticfiles %}
 <!DOCTYPE html>
+<!-- new for deploy -->
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <link href='https://fonts.googleapis.com/css?family=Orbitron:400,900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="{% static 'shirt_factory/style.css' %}">
-    <title>All Designs - ASCII art generator by Shirt Factory</title>
-  </head>
+<head>
+  <meta charset="utf-8">
+  <link href='https://fonts.googleapis.com/css?family=Orbitron:400,900' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{% static 'shirt_factory/style.css' %}">
+  <title>All Designs - ASCII art generator by Shirt Factory</title>
+</head>
 <body>
-  <div class="transluc">
-    <h2>Test display for Shirt Factory Designs</h2>
-    <h3><a href="{% url 'post' %}">Make a new design</a></h3>
-  </div>
+  <header class="transluc">
+    <h1 id="bigheadertext">ASCII art generator</h1>
+    <h2>ASCII design gallery</h2>
+    <h3><a href="{% url 'post' %}">Click here to make a new design</a></h3>
+  </header>
+  <nav class="transluc">
+    <a href="{% url 'post' %}">Home</a>
+    <a id="menupad" href="{% url 'all' %}">Design Gallery</a>
+    <a href="about:blank"><strike>About</strike></a>
+  </nav>
   {% for design in all_designs %}
-  <div>
-    <ul>Design info: {{ design }}</ul>
+  <article>
+    <ul class="transluc">
+      <li>Design info: {{ design }}</li>
       <li>Name: {{ design.design_name }}</li>
-      <li>Comment:
-        <p>{{ design.comment|linebreaksbr }}</p>
-      </li>
+      <li>Comment: <p>{{ design.comment|linebreaksbr }}</p></li>
       <li>design id: {{ design.id }}</li>
+    </ul>
     <section id="preview_area" class="transluc">
         <div><img src="{% url 'thumb' design.id %}"></div>
-        <div><img src="{% url 'image' design.id %}"></div>
+        <div><img class="main_img" src="{% url 'image' design.id %}"></div>
     </section>
-  </div>
+  </article>
   {% endfor %}
 </body>
 </html>
